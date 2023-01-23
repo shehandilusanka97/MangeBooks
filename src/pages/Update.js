@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 
 const Update = () => {
     const[book,setBook]=useState({
@@ -9,6 +9,8 @@ const Update = () => {
         cover:''
     })
     const navigate = useNavigate()
+    const location =useLocation()
+    const bookId = location.pathname.split("/")[2]
     const handleChange=(e)=>{
     setBook(prev=>({
         ...prev,[e.target.name]: e.target.value
@@ -17,7 +19,7 @@ const Update = () => {
    const handleClick=async e=>{
     e.preventDefault()
     try{
-        await axios.post("http://localhost:8800/books",book)
+        await axios.put("http://localhost:8800/books/"+bookId,book)
         navigate("/")
     }catch(err){
         console.log(err)

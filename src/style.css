@@ -53,6 +53,12 @@ input{
     border:1px solid gray;
 
 }
-.formButtom{
-    
+.formButton{
+    border:none;
+    padding: 10px;
+    background-color: lightcoral;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
 }
