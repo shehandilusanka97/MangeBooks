@@ -29,7 +29,7 @@ const Add = () => {
         <input type="text" placeholder="title" onChange={handleChange} name='title'/>
         <input type="text" placeholder="desc"onChange={handleChange} name='desc'/>
         <input type="text" placeholder="cover"onChange={handleChange} name='cover'/>
-        <button onClick={handleClick}>Add</button>
+        <button className='formButton' onClick={handleClick}>Add</button>
 
     </div>
   )
